@@ -1,0 +1,32 @@
+# 所有环境的共用配置属性
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: metrics,health
+info:
+  app-name:spring-boot-demo
+  author:anqi
+# 连字符
+spring:
+  profiles:
+    active: dev
+---
+# profile=x的专用属性,也就是某个环境下的转哟好难过属性
+# 开发环境
+spring:
+  profiles: dev
+---
+# profile=x的专用属性,也就是某个环境下的转哟好难过属性
+# 开发环境
+spring:
+  profiles: prod
+server:
+  tomcat:
+    max-connections: 1000
+    threads:
+      max: 300
+
